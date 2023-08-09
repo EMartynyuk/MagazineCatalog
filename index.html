@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="resources/#.ico" type="image/x-icon">
+    <meta name="theme-color" content="#111111">
+    <title>SlimeSneakers</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <script defer src="js/main.min.js"></script>
+  </head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <nav class="header__navigation">
+                    <ul class="header__items">
+                        <li class="header__item"><a class="header__item-link" href="#">Каталог</a></li>
+                        <li class="header__item"><a class="header__item-link" href="#">О нас</a></li>
+                        </li>
+                        <li class="header__item"><a class="header__item-link" href="#">Доставка и
+                                оплата</a></li>
+                        <li class="header__item"><a class="header__item-link" href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header__cart">
+                    <a class="header__cart-link" href="#">
+                        <span class="header__cart-text">Корзина</span>
+                        <img class="header__cart-img" src="images/cart.svg" alt="Корзина">
+                        <span class="header__cart-counter"></span>
+                    </a>
+                    <div class="header__cart-block cart">
+                        <ul class="cart__items">
+                        </ul>
+                        <div class="cart__bottom">
+                            <div class="cart__price">
+                                <p class="cart__price-text">Итого:</p>
+                                <p class="cart__price-sum">0 ₽</p>
+                            </div>
+                            <button class="cart__btn btn-reset modal-btn" data-graph-animation="fadeInUp" data-graph-path="ordering">Перейти в корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__bottom">
+                <div class="header__content">
+                    <p class="header__content-title">Кроссовки известных брендов
+                        с доставкой по России и СНГ</p>
+                    <p class="header__content-text">Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и
+                        многие другие по низким ценам</p>
+                    <a class="header__content-btn" href="#filter">Перейти к покупкам</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="catalog">
+            <div class="container">
+                <div class="catalog__wrapper">
+                    <div class="catalog__content">
+                        <div class="catalog__title">Каталог</div>
+                        <button class="catalog__filter-btn">Фильтр</button>
+                    </div>
+                    <div class="catalog__wrap">
+                        <div class="catalog__filter" id="filter">
+                            <div class="catalog__filter-main">Подбор
+                                по параметрам</div>
+                            <div class="catalog__filter-range">
+                                <p class="catalog__filter-title">Цена, руб</p>
+                                <div class="catalog__filter-range-block">
+                                    <input class="catalog__filter-range-item" type="number" min="1850" max="25768"
+                                        placeholder="1850" id="input0" inputmode="tel">
+                                    <input class="catalog__filter-range-item" type="number" min="1850" max="25768"
+                                        placeholder="25768" id="input1" inputmode="tel">
+                                </div>
+                                <div class="catalog__filter-range-slider"></div>
+                            </div>
+                            <div class="catalog__filter-gender">
+                                <p class="catalog__filter-title">Пол</p>
+                                <label class="catalog__filter-gender-label">
+                                    <input class="catalog__filter-gender-input" type="radio" name="gender"
+                                        data-filter=".category-m">
+                                    <span class="catalog__filter-gender-span"></span>
+                                    мужской
+                                </label>
+                                <label class="catalog__filter-gender-label">
+                                    <input class="catalog__filter-gender-input" type="radio" name="gender"
+                                        data-filter=".category-g">
+                                    <span class="catalog__filter-gender-span"></span>
+                                    женский
+                                </label>
+                            </div>
+                            <div class="catalog__filter-size">
+                                <p class="catalog__filter-title">Размер</p>
+                                <table class="catalog__filter-table">
+                                    <tr>
+                                        <td data-filter=".size-35">35</td>
+                                        <td data-filter=".size-36">36</td>
+                                        <td data-filter=".size-37">37</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-filter=".size-38">38</td>
+                                        <td data-filter=".size-39">39</td>
+                                        <td data-filter=".size-40">40</td>
+                                    </tr>
+                                    <tr>
+                                        <td >41</td>
+                                        <td >42</td>
+                                        <td >43</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <button class="catalog__filter-btn">Применить</button>
+                            <button class="catalog__filter-btn-reset" data-filter="all">Сбросить</button>
+                        </div>
+
+                        <div class="catalog__items">
+                            <div class="catalog__item mix category-m size-35">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item.avif" type="image/avif">
+                                            <source srcset="images/item.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="catalog__item-title">Кроссовки Lacoste Zapatillas</p>
+                                    <p class="catalog__item-price">15 410 р</p>
+                                </div>
+
+                            </div>
+                            <div class="catalog__item mix category-g size-36">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item2.avif" type="image/avif">
+                                            <source srcset="images/item2.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item2.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">Кроссовки Adidas Originals Ozweego Unisex</p>
+                                    <p class="catalog__item-price">17 526 р</p>
+                                </div>
+                            </div>
+                            <div class="catalog__item mix category-m size-37">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item3.avif" type="image/avif">
+                                            <source srcset="images/item3.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item3.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">Кроссовки Nike Air Force 1 '07 LV8 SE</p>
+                                    <p class="catalog__item-price">1 850 р</p>
+                                </div>
+
+                            </div>
+                            <div class="catalog__item mix category-m size-38">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item4.avif" type="image/avif">
+                                            <source srcset="images/item4.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item4.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">Кроссовки New Balance MR530</p>
+                                    <p class="catalog__item-price">10 679 р</p>
+                                </div>
+
+                            </div>
+                            <div class="catalog__item mix category-m size-39">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item5.avif" type="image/avif">
+                                            <source srcset="images/item5.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item5.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">
+                                        Кеды Vans Ua Old Skool Mte</p>
+                                    <p class="catalog__item-price">11 390 р</p>
+                                </div>
+
+                            </div>
+                            <div class="catalog__item mix category-g size-40">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item6.avif" type="image/avif">
+                                            <source srcset="images/item6.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item6.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">Кроссовки Nike Sportswear Air Max 90</p>
+                                    <p class="catalog__item-price">25 768 р</p>
+                                </div>
+
+                            </div>
+                            <div class="catalog__item">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item7.avif" type="image/avif">
+                                            <source srcset="images/item7.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item7.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">Кроссовки New Balance 997 Unisex</p>
+                                    <p class="catalog__item-price">13 885 р</p>
+                                </div>
+
+                            </div>
+                            <div class="catalog__item">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item8.avif" type="image/avif">
+                                            <source srcset="images/item8.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item8.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">Кроссовки Nike Sportswear Air Max Terrascape 90</p>
+                                    <p class="catalog__item-price">18 025 р</p>
+                                </div>
+
+                            </div>
+                            <div class="catalog__item">
+                                <div class="catalog__item-wrap">
+                                    <div class="catalog__item-picture">
+                                        <picture class="catalog__item-pic">
+                                            <source srcset="images/item9.avif" type="image/avif">
+                                            <source srcset="images/item9.webp" type="image/webp">
+                                            <img class="catalog__item-img" src="images/item9.jpg" alt="">
+                                        </picture>
+                                        <div class="overlay">
+                                            <div class="watch overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#watch"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="buy overlay-item">
+                                                <svg class="overlay-item__img">
+                                                    <use xlink:href="images/sprite.svg#buy"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="catalog__item-title">Кеды Adidas Originals Campus 00S Unisex</p>
+                                    <p class="catalog__item-price">14 234 р</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="catalog__show">Показать еще</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="graph-modal">
+                <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="ordering">
+                    <div class="graph-modal__content">
+                        <div class="ordering">
+                            <div class="ordering__content">
+                                <p class="ordering__title">Оформление заказа</p>
+                                <p class="ordering__order">Заказ 3456 67</p>
+                            </div>
+                            <div class="ordering__info">
+                                <p class="ordering__count">Товаров в заказе: <span class="ordering__count-span">0 </span> <span>шт</span>
+                                    </p>
+                                <p class="ordering__sum">Общая сумма заказа: <span class="ordering__sum-span">0 ₽</span>
+                                    </p>
+                                <p class="ordering__compound">Состав заказа</p>
+                                <ul class="ordering__items">
+                                </ul>
+                            </div>
+                            <form class="ordering__form" action="">
+                                <!-- <input class="" type="hidden" name="project_name" value="Site Name">
+                                <input class="" type="hidden" name="admin_email" value="admin@mail.com">
+                                <input class="" type="hidden" name="form_subject" value="Form Subject"> -->
+                                <label class="ordering__label">
+                                    <input class="ordering__input" type="text" placeholder="Ваше имя" required="required">
+                                </label>
+                                <label class="ordering__label">
+                                    <input class="ordering__input" type="tel" placeholder="Номер телефона" required="required">
+                                </label>
+                                <label class="ordering__label">
+                                    <input class="ordering__input" type="email" placeholder="E-mail" required="required">
+                                </label>
+                                <button class="ordering__btn" type="submit">Оформить заказ</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
